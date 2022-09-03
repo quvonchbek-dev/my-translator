@@ -8,8 +8,3 @@ class TrSerializer(serializers.ModelSerializer):
         model = Translator
         fields = '__all__'
 
-
-class LangsSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Lang
-        fields = '*'
