@@ -1,0 +1,49 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+<div class="container shadow-lg p-3 mb-5 bg-white rounded"
+     style="margin: 40px; justify-content: center; align-items: center">
+    <p></p>
+    <h1 align="center"><i class="bi bi-translate"></i> Translator</h1>
+    <hr class="border border-success border-2 opacity-80"/>
+    <p></p>
+    <p></p>
+    <div class="d-flex form-group shadow-textarea">
+        <div class="mb-2" style="width: 80%; height: 80%" align="start">
+            <div class="btn-group">
+                <button type="button" class="btn btn-secondary dropdown-toggle border-indigo" data-bs-toggle="dropdown"
+                        aria-expanded="false" id="src" value="uz">
+                    <i class="flag flag-uz"></i>Uzbek
+                </button>
+                <ul class="dropdown-menu">
+                    <li>
+                        <button class="dropdown-item">Russian</button>
+                    </li>
+                    <li>
+                        <button class="dropdown-item">Uzbek</button>
+                    </li>
+                    <li>
+                        <button class="dropdown-item">Auto</button>
+                    </li>
+                </ul>
+            </div>
+            <textarea class="form-control z-depth-1" id="src_text" rows="5" style="width: 100%; height: 100%"
+                      placeholder="..." oninput="translate_text()"></textarea>
+        </div>
+
+        <div class="mb-2" style="width: 80%; height: 80%" align="start">
+            <div class="btn-group">
+                <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown"
+                        aria-expanded="false" value="ru" id="dist">
+                    <i class="flag flag-ru"></i>Russian
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item">Russian</a></li>
+                    <li><a class="dropdown-item">Uzbek</a></li>
+                    <li><a class="dropdown-item">English</a></li>
+                </ul>
+            </div>
+            <textarea disabled class="" id="translated_text" rows="5" style="width: 100%; height: 100%"></textarea>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
