@@ -14,15 +14,13 @@
                     <i class="flag flag-uz"></i>Uzbek
                 </button>
                 <ul class="dropdown-menu">
+                    {% for lang in langs %}
                     <li>
-                        <button class="dropdown-item">Russian</button>
+                        <button class="dropdown-item" id="" value="{{ lang.l_code }}"><i
+                                class="flag flag-{{ lang.c_code }}"></i> {{ lang }}
+                        </button>
                     </li>
-                    <li>
-                        <button class="dropdown-item">Uzbek</button>
-                    </li>
-                    <li>
-                        <button class="dropdown-item">Auto</button>
-                    </li>
+                    {% endfor %}
                 </ul>
             </div>
             <textarea class="form-control z-depth-1" id="src_text" rows="5" style="width: 100%; height: 100%"
@@ -36,9 +34,13 @@
                     <i class="flag flag-ru"></i>Russian
                 </button>
                 <ul class="dropdown-menu">
-                    <li><a class="dropdown-item">Russian</a></li>
-                    <li><a class="dropdown-item">Uzbek</a></li>
-                    <li><a class="dropdown-item">English</a></li>
+                    {% for lang in langs %}
+                    <li>
+                        <button class="dropdown-item" value="{{ lang.l_code }}"><i
+                                class="flag flag-{{ lang.c_code }}"></i> {{ lang }}
+                        </button>
+                    </li>
+                    {% endfor %}
                 </ul>
             </div>
             <textarea disabled class="" id="translated_text" rows="5" style="width: 100%; height: 100%"></textarea>

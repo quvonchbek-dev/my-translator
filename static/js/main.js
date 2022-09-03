@@ -22,17 +22,17 @@ function translate_text() {
         }).catch(error => console.error('Error:', error));
 }
 
-//function set_dist() {
-//    dist = document.getElementById('dist')
-//    dist.value = this.value
-//    dist.innerHTML = this.text;
-//
-//}
-//
-//function set_src() {
-//    src = document.getElementById('dist')
-//
-//    dist.value = this.value
-//    dist.innerHTML = this.text;
-//
-//}
+function set_dist() {
+    dist = document.getElementById('dist')
+    dist.value = this.value
+    dist.innerHTML = this.text;
+
+}
+
+function set_src() {
+    src = document.getElementById('dist')
+
+    dist.value = this.value
+    dist.innerHTML = this.text;
+
+}

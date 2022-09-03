@@ -1,8 +1,13 @@
 from django.shortcuts import render
 
+from .models import Lang
+
 
 def home(request):
-    return render(request, 'home.html')
+    data = {
+        'langs': Lang.objects.all()
+    }
+    return render(request, 'home.html', data)
 
 
 def auth(request):
