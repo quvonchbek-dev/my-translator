@@ -1,49 +1,34 @@
 {% extends 'base.html' %} {% load static %} {% block content %}
 <div class="container shadow-lg p-3 mb-5 bg-white rounded"
-     style="margin: 40px; justify-content: center; align-items: center">
+     style="margin: 40px, 40px; margin-top: 100px; justify-content: center; align-items: center">
     <p></p>
     <h1 align="center"><i class="bi bi-translate"></i> Translator</h1>
-    <hr class="border border-success border-2 opacity-80"/>
+    <hr class="border border-success border-2 opacity-50"/>
     <p></p>
     <p></p>
     <div class="d-flex form-group shadow-textarea">
         <div class="mb-2" style="width: 80%; height: 80%" align="start">
             <div class="btn-group">
-                <button type="button" class="btn btn-secondary dropdown-toggle border-indigo" data-bs-toggle="dropdown"
-                        aria-expanded="false" id="src" value="uz">
-                    <i class="flag flag-uz"></i>Uzbek
-                </button>
-                <ul class="dropdown-menu">
+                <select id="src" class="btn bg-success opacity-70 text-white" onchange="translate_text()">
                     {% for lang in langs %}
-                    <li>
-                        <button class="dropdown-item" id="" value="{{ lang.l_code }}"><i
-                                class="flag flag-{{ lang.c_code }}"></i> {{ lang }}
-                        </button>
-                    </li>
+                    <option value="{{ lang.l_code }}" class="text-white">{{ lang.name }}</option>
                     {% endfor %}
-                </ul>
+                </select>
             </div>
             <textarea class="form-control z-depth-1" id="src_text" rows="5" style="width: 100%; height: 100%"
-                      placeholder="..." oninput="translate_text()"></textarea>
+                      placeholder="" oninput="translate_text()"></textarea>
         </div>
 
         <div class="mb-2" style="width: 80%; height: 80%" align="start">
             <div class="btn-group">
-                <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown"
-                        aria-expanded="false" value="ru" id="dist">
-                    <i class="flag flag-ru"></i>Russian
-                </button>
-                <ul class="dropdown-menu">
+                <select id="dist" class="btn bg-success opacity-70 text-white" onchange="translate_text()">
                     {% for lang in langs %}
-                    <li>
-                        <button class="dropdown-item" value="{{ lang.l_code }}"><i
-                                class="flag flag-{{ lang.c_code }}"></i> {{ lang }}
-                        </button>
-                    </li>
+                    <option value="{{ lang.l_code }}" class="text-white">{{ lang.name }}</option>
                     {% endfor %}
-                </ul>
+                </select>
             </div>
-            <textarea disabled class="" id="translated_text" rows="5" style="width: 100%; height: 100%"></textarea>
+            <textarea disabled class="form-control z-depth-1" id="translated_text" rows="5"
+                      style="width: 100%; height: 100%"></textarea>
         </div>
     </div>
 </div>
